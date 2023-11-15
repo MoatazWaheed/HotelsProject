@@ -1,0 +1,67 @@
+﻿@model RoomDetails // We didnt use IEnumerable because it's only one row (not a list)
+@{
+}
+
+<div class="container" dir="rtl">
+    <div class="alert alert-primary" role="alert" text-center">
+        <h1 class="text-center">تعديل تفاصيل الغرفة</h1>
+
+    </div>
+
+    <form asp-controller="Dashboard" asp-action="UpdateRoomDetails" method="post">
+        <input type="hidden" asp-for="@Model.Id" />
+        @* <div class="row">
+            <div class="col">
+                <label for="Id" class="p-2">
+                    اسم الفندق
+                </label>
+                <input type="text" id="Id" name="Name" class="form-control form-control-sm" asp-for="@Model.Id" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+        </div> *@
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="Image1" class="p-2">الصورة الأولى</label>
+                <input type="text" id="Image1" name="Image1" class="form-control form-control-sm" asp-for="@Model.Image1" />
+                <span asp-validation-for="Image1" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="Image2" class="p-2">الصورة الثانية</label>
+                <input type="text" id="Image2" name="Image2" class="form-control form-control-sm" asp-for="@Model.Image2" />
+                <span asp-validation-for="Image2" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="Image3" class="p-2">الصورة الثالثة</label>
+                <input type="text" id="Image3" name="Image3" class="form-control form-control-sm" asp-for="@Model.Image3" />
+                <span asp-validation-for="Image3" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="Futures" class="p-2">Futures</label>
+                <input type="text" id="Futures" name="Futures" class="form-control form-control-sm" asp-for="@Model.Futures" />
+                <span asp-validation-for="Futures" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="Food" class="p-2">Food</label>
+                <input type="text" id="Food" name="Food" class="form-control form-control-sm" asp-for="@Model.Food" />
+                <span asp-validation-for="Food" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col text-center">
+                <button class="btn btn-success" type="submit">حفظ</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

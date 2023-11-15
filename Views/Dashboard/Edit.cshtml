@@ -1,0 +1,67 @@
+﻿@model Hotel // We didnt use IEnumerable because it's only one row (not a list)
+@{
+}
+
+<div class="container" dir="rtl">
+    <div class="alert alert-primary" role="alert" text-center">
+        <h1 class="text-center">تعديل بيانات الفندق</h1>
+
+    </div>
+
+    <form asp-controller="Dashboard" asp-action="Update" method="post">
+        <input type="hidden" asp-for="@Model.Id" />
+        <div class="row">
+            <div class="col">
+                <label for="Name" class="p-2">
+                    اسم الفندق
+                </label>
+                <input type="text" id="Name" name="Name" class="form-control form-control-sm" asp-for="@Model.Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="Address" class="p-2">عنوان الفندق</label>
+                <input type="text" id="Address" name="Address" class="form-control form-control-sm" asp-for="@Model.Address" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="City" class="p-2">المدينة</label>
+                <input type="text" id="City" name="City" class="form-control form-control-sm" asp-for="@Model.City" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="Email" class="p-2">البريد الإلكتروني</label>
+                <input type="text" id="Email" name="Email" class="form-control form-control-sm" asp-for="@Model.Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="Phone" class="p-2">الهاتف</label>
+                <input type="text" id="Phone" name="Phone" class="form-control form-control-sm" asp-for="@Model.Phone" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="Images" class="p-2">الصورة</label>
+                <input type="text" id="Images" name="Images" class="form-control form-control-sm" asp-for="@Model.Images" />
+                <span asp-validation-for="Images" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col text-center">
+                <button class="btn btn-success" type="submit">حفظ</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
